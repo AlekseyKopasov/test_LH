@@ -1,0 +1,31 @@
+.top-nav {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: 0;
+    margin-right: 20px;
+    padding: 0;
+
+    list-style: none;
+  }
+
+  &__item {
+    margin-right: 20px;
+    white-space: nowrap;
+  }
+
+  &__link {
+    color: $color-nero;
+
+    @include hover-focus;
+
+    &.is-active {
+      opacity: 0.6;
+    }
+  }
+
+  &__toggle {
+    display: none;
+  }
+}

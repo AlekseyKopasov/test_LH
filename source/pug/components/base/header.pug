@@ -1,36 +1,95 @@
 mixin header(headerMods, currentUrl)
   -
-    const headerLinks = [
+    const headerTopNavLinks = [
       {
-        href: "index.html",
-        text: "Главная"
+        href: "#",
+        text: "Каталог инструментов"
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "Все для сада"
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "Ручной интрумент"
+      },
+      {
+        href: "#",
+        text: "Электрика"
+      },
+      {
+        href: "#",
+        text: "Доставка"
+      },
+      {
+        href: "#",
+        text: "Оплата"
+      },
+      {
+        href: "#",
+        text: "О нас"
+      },
+    ]
+
+  -
+    const headerBottomNavLinks = [
+      {
+        href: "#",
+        text: "Перфораторы"
+      },
+      {
+        href: "#",
+        text: "Дрели"
+      },
+      {
+        href: "#",
+        text: "Шлифмашины"
+      },
+      {
+        href: "#",
+        text: "Пистолеты"
+      },
+      {
+        href: "#",
+        text: "Электропилы"
+      },
+      {
+        href: "#",
+        text: "Наборы инструментов"
+      },
+      {
+        href: "#",
+        text: "Аксессуары"
       },
     ]
 
   header.header(class=headerMods)
     .container
-      if(currentUrl === "index.html")
-        //- lighthouse снимает 10 баллов SEO за <a> без href
-        span.header__logo Логотип
-      else
-        a.header__logo(href="index.html", aria-label="Переход на главную") Логотип
+      .header__wrapper
+        +logo()
+
+        .header__body
+          .header__top
+            +top-nav(headerTopNavLinks, currentUrl)
+            +user-actions()
+
+          .header__bottom
+            .header__bunner banner
+            .header__actions actions
+            ul.header__card-preview-list card preview
+            .header__info info
+          
       nav.main-nav
         button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
           +icon("icon-burger", 20, 20)
         .main-nav__wrapper
+          .main-nav__search Search icon
           ul.main-nav__list
-            each link in headerLinks
+            each link in headerBottomNavLinks
               - const activeState = currentUrl === link.href
               li.main-nav__item
                 if(activeState)
                   span.main-nav__link.is-active=link.text
                 else
                   a.main-nav__link(href=link.href)=link.text
+          .main-nav_sale Распродажа

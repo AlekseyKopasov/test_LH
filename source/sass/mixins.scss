@@ -41,3 +41,16 @@
     @content;
   }
 }
+
+@mixin hover-focus {
+  transition: opacity $trans-600;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}

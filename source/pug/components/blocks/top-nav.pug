@@ -1,0 +1,11 @@
+mixin top-nav(list, currentUrl)
+   nav.top-nav
+    .top-nav__wrapper
+      ul.top-nav__list
+          each link in list
+            - const activeState = currentUrl === link.href
+            li.top-nav__item
+              if(activeState)
+                span.top-nav__link.is-active=link.text
+              else
+                a.top-nav__link(href=link.href)=link.text
