@@ -16,7 +16,7 @@ html {
   font-size: $fz-default;
   line-height: 24px;
   font-family: $ff-roboto;
-  color: $color-default-black;
+  color: $color-nero;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -34,7 +34,7 @@ body {
 }
 
 a {
-  color: $color-default-black;
+  color: $color-nero;
   text-decoration: none;
 }
 

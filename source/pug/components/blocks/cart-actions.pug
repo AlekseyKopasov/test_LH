@@ -1,0 +1,27 @@
+mixin cart-actions(previewList)
+  .cart-actions
+    ul.cart-actions__list
+      li.cart-actions__item 
+        a.cart-actions__link.cart-actions__link--cart(href="#" aria-label="Количество и цена товаров в корзине") 
+          +icon("icon-cart", 19, 18)
+          span.cart-actions__cart-count 3
+          span.cart-actions__cart-unit шт.
+          span &nbsp;/&nbsp;
+          span.cart-actions__cart-price 17 250
+          span &nbsp;p.
+      li.cart-actions__item 
+        a.cart-actions__link(href="#")
+          +icon("icon-star", 14, 14)
+          span.cart-actions__favorites Избранное
+          span &nbsp;(
+          span.cart-actions__favorites-count 7
+          span )&nbsp;
+      li.cart-actions__item 
+        a.cart-actions__link(href="#")
+          +icon("icon-balance", 18, 16)
+          span.cart-actions__compare К сравнению
+          span &nbsp;(
+          span.cart-actions__compare-count 5
+          span )&nbsp;
+
+    +cart-preview(previewList)

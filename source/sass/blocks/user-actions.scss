@@ -1,0 +1,38 @@
+.user-actions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+}
+
+.user-actions__item {
+  position: relative;
+
+  &::after {
+    content: "|";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 10px;
+
+    color: $color-default-black;
+  }
+
+  &:last-child::after {
+    display: none;
+  }
+}
+
+.user-actions__link {
+  display: block;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+
+  @include hover-focus;
+}

@@ -63,6 +63,67 @@ mixin header(headerMods, currentUrl)
       },
     ]
 
+  -
+    const toolsPreviewList = [
+    {
+      label: "Tool 1",
+      img: {
+        path: "content/header",
+        name: "tool-1",
+        format: "jpg",
+        width: 200,
+        height: 200,
+        altText: "Tool 1"
+      }
+    },
+    {
+      label: "Tool 2",
+      img: {
+        path: "content/header",
+        name: "tool-2",
+        format: "jpg",
+        width: 200,
+        height: 200,
+        altText: "Tool 2"
+      }
+    },
+    {
+      label: "Tool 3",
+      img: {
+        path: "content/header",
+        name: "tool-3",
+        format: "jpg",
+        width: 200,
+        height: 200,
+        altText: "Tool 3"
+      }
+    },
+    ]
+
+  -
+    const cities = {
+      class: "",
+      id: "",
+      name: "header-cities",
+      repeater: "",
+      ariaLabel: "Выберите ваш город",
+      options: [
+        {
+          text: "Москва",
+          value: "Moscow",
+          isActive: true,
+        },
+        {
+          text: "Киев",
+          value: "Kiev",
+        },
+        { 
+          text: "Минск",
+          value: "Minsk",
+        },
+      ],
+    }
+
   header.header(class=headerMods)
     .container
       .header__wrapper
@@ -74,10 +135,10 @@ mixin header(headerMods, currentUrl)
             +user-actions()
 
           .header__bottom
-            .header__bunner banner
-            .header__actions actions
-            ul.header__card-preview-list card preview
-            .header__info info
+            .header__banner
+              +img("content/header", "banner", "jpg", 1282, 1920, "Баннер в шапке")
+            +cart-actions(toolsPreviewList)
+            +contacts(cities)
           
       nav.main-nav
         button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")

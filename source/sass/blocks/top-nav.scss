@@ -16,6 +16,10 @@
   }
 
   &__link {
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 14px;
+
     color: $color-nero;
 
     @include hover-focus;
