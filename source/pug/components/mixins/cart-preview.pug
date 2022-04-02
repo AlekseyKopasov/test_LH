@@ -1,7 +1,7 @@
 mixin cart-preview(list)
   ul.cart-preview
     each tool in list
-      - let {path, name, format, width, height, altText} = tool.img 
+      - let {path, name, format, width, height, altText} = tool.img
 
       li.cart-preview__item
         a.cart-preview__link(href="#", aria-label="Перейти на страницу товара" + " " + tool.label)

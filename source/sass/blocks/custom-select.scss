@@ -1,9 +1,9 @@
 .custom-select {
   font-family: inherit;
   position: relative;
-  font-size: 15px;
-  line-height: 22px;
-  font-weight: 600;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
 
   &__label {
     position: absolute;
@@ -43,31 +43,33 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 35px;
-    padding: 10px 15px;
-    line-height: 13px;
-    font-weight: 600;
+    height: 22px;
+    padding: 0;
+    line-height: 14px;
+    font-weight: 400;
 
     border: none;
     border-radius: 60px;
     outline: none;
     cursor: pointer;
-    color: $color-default-black;
-
-    transition: background-color $trans-600;
+    color: inherit;
+    background-color: transparent;
 
     &:hover,
     &:focus {
-      background-color: red;
+      .custom-select__icon,
+      .custom-select__icon-text {
+        opacity: 0.5;
+      }
     }
   }
 
   &__list {
     position: absolute;
-    bottom: -10px;
+    bottom: 0;
     z-index: 21;
 
-    width: 218px;
+    width: 184px;
     max-height: 136px;
     margin: 0;
     padding: 0;
@@ -76,8 +78,8 @@
     list-style: none;
 
     background-color: $color-default-white;
-    box-shadow: 0 4px 64px rgba(0, 0, 0, 0.15);
-    border-radius: 7px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
     transform: translateY(100%);
     visibility: hidden;
     opacity: 0;
@@ -92,29 +94,12 @@
     outline: none;
     cursor: pointer;
 
-    transition: background-color $trans-600;
-
-    &[aria-selected='true'] {
-      position: relative;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 10px;
-        right: 13px;
-        width: 10px;
-        height: 10px;
-        background-image: url('../img/svg/tick-black.svg');
-        background-size: 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-      }
-    }
+    transition: opacity $trans-600;
 
     @media (hover: hover), screen and (min-width: 0\0) {
       &:hover,
       &:focus {
-        background-color: red;
+        opacity: 0.5;
       }
     }
   }
@@ -124,7 +109,7 @@
     bottom: 0;
     left: 0;
 
-    color: green;
+    color: $color-tangerine-yellow;
 
     opacity: 0;
 
@@ -139,6 +124,7 @@
     text-align: left;
     white-space: nowrap;
     text-overflow: ellipsis;
+    letter-spacing: 0.2px;
 
     opacity: 0;
 
@@ -152,14 +138,33 @@
   &__icon {
     display: inline-block;
     flex-shrink: 0;
-    width: 14px;
-    height: 9px;
-    margin-left: auto;
+    width: 7px;
+    height: 7px;
+    margin: 0 3px 0 auto;
 
-    background-image: url('../img/svg/icon-arrow-right.svg');
-    transition: transform $trans-600;
+    background-image: url("../img/svg/icon-arrow-right.svg");
     background-position: center;
     background-repeat: no-repeat;
+    transition: opacity $trans-600;
+  }
+
+  &__icon-text {
+    position: relative;
+    transition: opacity $trans-600;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 1px;
+
+      width: calc(100% - 3px);
+      height: 1px;
+
+      border-bottom: 1px dotted $color-nero;
+
+      transition: opacity $trans-600;
+    }
   }
 
   &.open-up {
@@ -174,11 +179,6 @@
     .custom-select__list {
       visibility: visible;
       opacity: 1;
-    }
-
-    .custom-select__icon {
-      transform-origin: center;
-      transform: rotate(90deg);
     }
 
     .custom-select__label {

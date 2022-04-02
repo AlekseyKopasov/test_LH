@@ -19,8 +19,8 @@ mixin custom-select(options = {})
       span.custom-select__placeholder=options.placeholder
     button.custom-select__button(type="button", aria-label=ariaLabel)
       span.custom-select__text
-      p.custom-select__icon
-        span.custom-select__label-title Сменить
+      span.custom-select__icon
+      span.custom-select__icon-text cменить
     ul.custom-select__list(role="listbox")
       each option in options.options
         - var ariaSelected = option.isActive ? "true" : "false"

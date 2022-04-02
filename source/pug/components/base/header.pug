@@ -117,7 +117,7 @@ mixin header(headerMods, currentUrl)
           text: "Киев",
           value: "Kiev",
         },
-        { 
+        {
           text: "Минск",
           value: "Minsk",
         },
@@ -139,7 +139,7 @@ mixin header(headerMods, currentUrl)
               +img("content/header", "banner", "jpg", 1282, 1920, "Баннер в шапке")
             +cart-actions(toolsPreviewList)
             +contacts(cities)
-          
+
       nav.main-nav
         button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
           +icon("icon-burger", 20, 20)
@@ -153,4 +153,4 @@ mixin header(headerMods, currentUrl)
                   span.main-nav__link.is-active=link.text
                 else
                   a.main-nav__link(href=link.href)=link.text
-          .main-nav_sale Распродажа
+          .main-nav__sale Распродажа

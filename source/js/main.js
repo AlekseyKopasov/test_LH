@@ -1,6 +1,10 @@
-import {iosVhFix} from './utils/ios-vh-fix';
+import {
+  iosVhFix
+} from './utils/ios-vh-fix';
 import './modules/custom-select';
-import {initCitiesSelect} from './modules/init-cities-select'
+import {
+  initCitiesSelect
+} from './modules/init-cities-select';
 
 // ---------------------------------
 
@@ -18,5 +22,3 @@ window.addEventListener('DOMContentLoaded', () => {
     initCitiesSelect();
   });
 });
-
-// ---------------------------------

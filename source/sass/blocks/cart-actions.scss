@@ -1,6 +1,6 @@
 .cart-actions {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -8,7 +8,7 @@
 .cart-actions__list {
   margin: 0;
   margin-right: 35px;
-  
+
   padding: 0;
   list-style: none;
 
@@ -17,7 +17,7 @@
 }
 
 .cart-actions__item {
-  margin-bottom: 6px;
+  margin-bottom: 9px;
 
   &:last-child {
     margin-bottom: 0;
@@ -28,22 +28,54 @@
   display: flex;
   align-items: center;
 
-  padding: 4px 0;
-
   font-family: inherit;
   font-size: 12px;
-  line-height: 14px;
+  line-height: 1;
 
   @include hover-focus;
 
-  & svg {
-    width: 19px;
-    height: 18px;
-    margin-right: 11px;
-  }
-
   &--cart {
     font-size: 14px;
-    line-height: 16px;
+  }
+
+  &--favorites svg {
+    width: 14px;
+    height: 14px;
+
+    transform: translate3d(2px, -1px, 0);
+  }
+
+  &--compare svg {
+    width: 18px;
+    height: 16px;
+
+    transform: translate3d(2px, -1px, 0);
+  }
+}
+
+.cart-actions__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 18px;
+  margin-right: 11px;
+}
+
+.cart-actions__text {
+  margin: 0;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $color-nero;
   }
 }
