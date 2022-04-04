@@ -1,3 +1,5 @@
+## Открыть Demo https://alekseykopasov.github.io/test_LH/build/index.html
+
 ## Краткая инструкция по работе
 Для начала работы у вас должент быть установлен **Node.js** 14 версии
 
