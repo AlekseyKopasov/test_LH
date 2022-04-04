@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 9px;
 
   transition: background-color $trans-default;
 
@@ -22,7 +21,6 @@
 
 .nav-item__link {
   padding: 9px 19px;
-  padding-right: 9px;
 
   font-family: inherit;
   font-size: 14px;

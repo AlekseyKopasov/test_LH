@@ -46,4 +46,8 @@
     color: $color-default-black;
     background-color: $color-tangerine-yellow;
   }
+
+  @include vp-767 {
+    display: none;
+  }
 }

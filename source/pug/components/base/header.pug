@@ -129,6 +129,8 @@ mixin header(headerMods, currentUrl)
       .header__wrapper
         +logo()
 
+        .header__burger
+          +icon("icon-burger", 16, 16)
         .header__body
           .header__top
             +top-nav(topNavLinks, currentUrl)
