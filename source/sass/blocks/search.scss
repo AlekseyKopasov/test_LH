@@ -1,0 +1,35 @@
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  max-width: 320px;
+  width: fit-content;
+  padding: 6px 3px 4px 8px;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0;
+  font-weight: 600;
+  white-space: nowrap;
+  color: $color-default-black;
+  background-color: $color-tangerine-yellow;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+  }
+
+  input {
+    display: none;
+    padding: 9px;
+  }
+
+  &.is-active {
+    input {
+      display: flex;
+    }
+  }
+}

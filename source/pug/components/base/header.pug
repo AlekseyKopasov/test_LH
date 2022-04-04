@@ -1,6 +1,6 @@
 mixin header(headerMods, currentUrl)
   -
-    const headerTopNavLinks = [
+    const topNavLinks = [
       {
         href: "#",
         text: "Каталог инструментов"
@@ -32,7 +32,7 @@ mixin header(headerMods, currentUrl)
     ]
 
   -
-    const headerBottomNavLinks = [
+    const mainNavLinks = [
       {
         href: "#",
         text: "Перфораторы"
@@ -131,7 +131,7 @@ mixin header(headerMods, currentUrl)
 
         .header__body
           .header__top
-            +top-nav(headerTopNavLinks, currentUrl)
+            +top-nav(topNavLinks, currentUrl)
             +user-actions()
 
           .header__bottom
@@ -140,17 +140,4 @@ mixin header(headerMods, currentUrl)
             +cart-actions(toolsPreviewList)
             +contacts(cities)
 
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          .main-nav__search Search icon
-          ul.main-nav__list
-            each link in headerBottomNavLinks
-              - const activeState = currentUrl === link.href
-              li.main-nav__item
-                if(activeState)
-                  span.main-nav__link.is-active=link.text
-                else
-                  a.main-nav__link(href=link.href)=link.text
-          .main-nav__sale Распродажа
+      +main-nav(mainNavLinks)

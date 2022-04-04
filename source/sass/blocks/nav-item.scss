@@ -1,0 +1,40 @@
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 9px;
+
+  transition: background-color $trans-default;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-tangerine-yellow;
+
+    .nav-item__link {
+      color: $color-default-black;
+    }
+  }
+}
+
+.nav-item__link {
+  padding: 9px 19px;
+  padding-right: 9px;
+
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0;
+  font-weight: 600;
+  color: $color-default-white;
+  white-space: nowrap;
+
+  transition: color $trans-default;
+
+  &.is-active {
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,6 @@
+mixin nav-item(link, isActive)
+  li.nav-item
+    if(activeState)
+      span.nav-item__link.is-active=link.text
+    else
+      a.nav-item__link(href=link.href)=link.text

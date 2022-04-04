@@ -1,0 +1,13 @@
+mixin main-nav(data)
+  nav.main-nav
+    button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+      span
+      span
+      span
+    .main-nav__wrapper
+      +search()
+      ul.main-nav__list
+        each link in data
+          - const activeState = currentUrl === link.href
+          +nav-item(link, activeState)
+      .main-nav__sale Распродажа
